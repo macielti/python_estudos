@@ -33,12 +33,29 @@ class Car():
         """Incrementar o valor do odometro"""
         self.odometro += novo_vl
     
+#classe para cuidar da bateria do carro elétrico
+class Bateria():
     
+    #construtor da instancia com um valor padrão
+    def __init__(self, value=70):
+        self.batterya=70
+    
+    #mostrar o estado da batterya    
     def show_batterya(self):
         """Mostrar a quantidade de bateria caso o carro seja da classe 
         eletronico"""
         print('Bateria: '+str(self.batterya))
         
+        
+    def eficiencia_bate(self):
+    """Mostrar a eficiencia da bateria e a distanca que ela dura"""
+        if self.batterya == 70:
+            distancia=240
+        else:
+            distancia= 270
+        print('Esse carro pode ir aproximadamente '+str(distancia)+'milhas com\
+uma carga total')
+
 
 #Classe filho da primeira class
 class Eletro_Car(Car):
@@ -48,14 +65,17 @@ class Eletro_Car(Car):
     #teoricaente se tornariam populares por volta de 2030(contexto kkk)
     def __init__(self, marca, modelo):
         super().__init__(marca, modelo, 2030)
-        self.batterya= 70
+        self.batterya= Bateria()
         
 
-#nova instancia de carro eletronico        
+#defino uma nova instancia de carro eletronico       
 tesla= Eletro_Car('tesla', 'v_power')
 
-#chamo a descrição do carro tesla
-tesla.descricao()
+#chamo a instancia atrelada a um parametro da classse baterya que está linkada 
+#a classe electrocar, encima desse link eu aplico a função para mostrar o estado
+#da batterya
+tesla.batterya.show_batterya()
 
-#chamo a quantidade de bateria do tesla
-tesla.show_batterya()
+#chamada da função que mostra a eficiencia da beteria linkando o atributo das
+#duas classes
+tesla.batterya.eficiencia_bate()
