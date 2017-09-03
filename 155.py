@@ -49,8 +49,6 @@ class Eletro_Car(Car):
     def __init__(self, marca, modelo):
         super().__init__(marca, modelo, 2030)
         self.batterya= 70
-    
-    
         
 
 #nova instancia de carro eletronico        
