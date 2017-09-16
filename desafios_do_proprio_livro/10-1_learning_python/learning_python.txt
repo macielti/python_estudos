@@ -1,0 +1,5 @@
+In Python you can make a list.
+In Python you can read files contents.
+In Python you can make a dictionary.
+In Python you can make a calculator.
+In Python you can do anything.
